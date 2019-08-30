@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	
+		<meta charset="UTF-8" />
+
+	</head>
+
+	<div th:fragment="containerViewInf" class="card pt-5">
+
+	  <div class="card-body text-center particulasContainer" id="particles-js">
+	    
+		<!-- Material form subscription -->
+		<div class="card cardPrincipal" style="margin: auto;">
+
+		    <h5 class="card-header white-text text-center py-4" style="background: #00a79d;">
+		        <strong>Informacion Personal</strong>
+		    </h5>
+
+		    <!--Card content-->
+		    <div class="card-body px-lg-5">
+
+		        <!-- Form -->
+		        <form class="text-center mt-3" style="color: #757575;" action="#!">
+					
+					<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="" width="200px" height="200px" class="rounded-circle imagenLogo animated bounce infinite delay-5s">
+
+					
+
+		            <!-- Name -->
+		            <div class="md-form mt-3 text-left">
+		            	<i class="fas fa-skating prefix grey-text"></i>
+		                <input type="text" id="materialSubscriptionFormPasswords" class="form-control" value="Jhan Christian" disabled="true">
+		                <label for="materialSubscriptionFormPasswords">Nombres</label>
+		            </div>
+
+		            <!-- E-mai -->
+		            <div class="md-form text-left">
+		            	<i class="fas fa-male prefix grey-text"></i>
+		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon Mariano" disabled="true">
+		                <label for="materialSubscriptionFormEmail">Apellidos</label>
+		            </div>
+
+		            <!-- Dni -->
+		            <div class="md-form text-left">
+		            	<i class="fas fa-lock prefix grey-text"></i>
+		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="70829426" disabled="true">
+		                <label for="materialSubscriptionFormEmail">Dni</label>
+		            </div>
+
+		            <!-- Sign in button -->
+		            <button class="btn btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" style="border: 3px solid #00a79d;z-index: 4;">Registrar Asistencia</button>
+
+		        </form>
+		        <!-- Form -->
+
+		    </div>
+
+		</div>
+
+	  </div>
+
+	</div>
+	
+</html>

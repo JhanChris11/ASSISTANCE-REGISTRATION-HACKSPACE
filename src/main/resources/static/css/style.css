@@ -1,0 +1,126 @@
+.particulasContainer{
+
+	display: flex;
+	align-items: center;
+	justify-content:center;
+
+}
+
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+
+	.cardPrincipal{
+
+		width: 50%;
+
+	}
+
+	#uno{
+		
+		display: none;
+
+	}
+
+}
+/*=============================================
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:1199px) and (min-width:992px){
+
+	.cardPrincipal{
+
+		width: 50%;
+
+	}
+
+	#uno{
+		
+		display: none;
+
+	}
+
+}
+
+/*=============================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){
+
+	.cardPrincipal{
+
+		width: 460px;
+
+	}
+
+	#uno{
+		
+		display: none;
+
+	}
+
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:767px) and (min-width: 577px){
+
+	
+
+	.cardPrincipal{
+
+		width: 90%;
+
+	}
+
+	.userName{
+
+		flex-direction: row;
+
+	}	
+
+
+	#uno{
+	
+		display: none;
+
+	}
+
+}
+
+
+@media (max-width:576px){
+
+	.cardPrincipal{
+
+		width: 90%;
+
+	}
+
+	.userName{
+
+		flex-direction: row;
+
+	}	
+
+	#uno{
+		
+		position: absolute;
+		top: 56px;
+		left: 0px;
+		width: 100%;
+
+		padding-left: 25px;	
+		padding-bottom: 10px;
+	}
+
+}
+
+

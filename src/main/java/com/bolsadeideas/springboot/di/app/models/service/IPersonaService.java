@@ -9,11 +9,10 @@ import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 
 public interface IPersonaService {
 
-@Transactional(readOnly=true)
-public List<Persona> findAll();
-
-public void save(Persona persona);
-
-public String Operacion();
+	@Transactional(readOnly=true)
+	public List<Persona> findAll();
+	
+	public void save(Persona persona);
+	
 }
 

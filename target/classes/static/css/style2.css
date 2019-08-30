@@ -1,0 +1,64 @@
+*{
+	
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+
+}
+
+.navPage{
+	
+	display: flex;	
+	justify-content: space-between;
+
+}
+
+.userName{
+
+	display: flex;
+	align-items: center;
+
+}
+
+.Usuario{
+
+	color: white;
+
+}
+
+.Usuario:hover{
+	
+	cursor: pointer;
+	color:#343a40;
+
+}
+
+
+.logOut{
+
+	color: white;
+    position: absolute;
+    top: 56px;
+    z-index: 10;
+    right: 0px;
+    width: 165px;
+  
+    text-align: center;
+
+	background-image: url(https://lh3.googleusercontent.com/-S0Y4GkKrj24/TYORw0_oMUI/AAAAAAAAABA/EpLAuStvnNI/s1600/la_mansion-1024x768.jpg);
+	background-size: cover;
+
+
+}
+
+.botonLogOut{
+	
+	height: 100px;
+	width: 100px;
+
+	background: transparent;
+	border: transparent;
+
+	color: white;
+
+}

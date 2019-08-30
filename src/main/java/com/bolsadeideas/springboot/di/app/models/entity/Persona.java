@@ -10,15 +10,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name="personas")
+@Table(name="persona")
 public class Persona implements Serializable{
-
+	
+	// Crear el atributo por defecto
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty
-
 	private String nombre;
 	
 	@NotEmpty
@@ -28,7 +30,7 @@ public class Persona implements Serializable{
 	private String apellidoMaterno;
 	
 	@NotEmpty
-	private int dni;
+	private String dni;
 	
 	@NotEmpty
 	private String cuentaGithub;
@@ -37,7 +39,7 @@ public class Persona implements Serializable{
 	private  String lugarResidencia;
 	
 	@NotEmpty
-	private int telefono;
+	private String telefono;
 	
 	@NotEmpty
 	private String password;
@@ -74,11 +76,11 @@ public class Persona implements Serializable{
 		this.apellidoMaterno = apellidoMaterno;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
@@ -98,11 +100,11 @@ public class Persona implements Serializable{
 		this.lugarResidencia = lugarResidencia;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
@@ -113,11 +115,5 @@ public class Persona implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	// Crear el atributo por defecto
-	private static final long serialVersionUID = 1L;
 	
 }

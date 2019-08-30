@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	
+		<meta charset="UTF-8" />
+
+	</head>
+
+	<nav th:fragment="navHome" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top navPage">
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#uno">
+                        
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse bg-dark" id="uno">
+			
+			<!-- Links -->
+		  <ul class="navbar-nav">
+
+		    <li class="nav-item">
+		      <a class="nav-link" th:href="@{/HomeView}">Perfil</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" th:href="@{/HomeEdit}">Editar Perfil</a>
+		    </li>
+
+		  </ul>
+
+        </div>
+
+        <ul class="navbar-nav userName">
+
+		    <li class="nav-item">
+		      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar" class="rounded-circle mr-3 imagenLogo" style="display: block;" width="40px" height="40px">
+		    </li>
+
+		    <li class="nav-item" data-toggle="collapse" data-target="#collapseExample"
+    		aria-expanded="false" aria-controls="collapseExample">
+		      <a class="nav-link" href="#">Jhan Calderon</a>
+		    </li>
+
+		  </ul>
+
+        <div class="collapse logOut bg-dark" id="collapseExample" style="background-color: transparent;">
+
+			<button class="botonLogOut">
+				
+				<i class="fas fa-sign-out-alt"></i>
+				<a style="color:white;" th:href="@{/}">LogOut</a>	
+
+			</button>
+
+
+		</div>
+
+	</nav>
+
+</html>

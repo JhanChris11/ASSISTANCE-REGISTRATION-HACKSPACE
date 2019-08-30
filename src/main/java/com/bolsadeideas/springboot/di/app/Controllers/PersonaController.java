@@ -18,8 +18,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 import com.bolsadeideas.springboot.di.app.models.service.IPersonaService;
 
-
-
 @Controller
 @SessionAttributes("persona")
 public class PersonaController {
@@ -27,32 +25,78 @@ public class PersonaController {
 	@Autowired
 	private IPersonaService  personaService;
 	
+	/*----------------------*/
+	/*		SHOW INDEX  	*/
+	/*----------------------*/
+	
 	@GetMapping({"/","","/index"})
-	public String index(Model model) {
-		//model.addAttribute("objeto", personaService.Operacion());
-		return "index";
-	}
-	@RequestMapping(value="/form")
-	public String crear(Map <String,Object> model) {
+	public String index(Map <String,Object> model) {
+		
 		Persona persona = new Persona();
 		
 		model.put("persona",persona);
 		model.put("titulo","Registrar");
 		
+		return "index";
 		
-		return "form";
 	}
-	@RequestMapping(value = "/form", method = RequestMethod.POST)
+	
+	@RequestMapping(value="/signIn")
+	public String signIn(Map <String,Object> model) {
+		
+		
+		Persona persona=new Persona();
+		
+		model.put("persona",persona);
+		
+		return "signIn";
+		
+	}
+	
+	@RequestMapping(value="/signIn",method=RequestMethod.POST)
+	public String validateSignIn(@Valid Persona persona, BindingResult result, Model model, RedirectAttributes flash,SessionStatus status) {
+		
+		status.setComplete();
+		
+		return "Home";
+		
+	}
+	
+	/*----------------------*/
+	/*	   SHOW HOMEVIEW  	*/
+	/*----------------------*/
+	
+	@RequestMapping(value="/HomeView")
+	public String HomeView() {
+		
+		return "Home";
+		
+	}
+	
+	/*----------------------*/
+	/*	   SHOW HOMEEDIT  	*/
+	/*----------------------*/
+	
+	@RequestMapping(value="/HomeEdit")
+	public String HomeEdit() {
+		
+		return "Home2";
+		
+	}
+	
+	/*----------------------*/
+	/*	   CREATING A NEW  	*/
+	/*	   	   PERSON  		*/
+	/*----------------------*/
+	
+	@RequestMapping(value="/form")
 	public String guardar(@Valid Persona persona, BindingResult result, Model model, RedirectAttributes flash,
 			SessionStatus status) {
 	
-		if(result.hasErrors()) {
-			model.addAttribute("titulo", "Registrar");
-			return "form";
-		}
 		personaService.save(persona);
 		status.setComplete();
 		
-	return "form";
-}
+		return "index";
+	
+	}
 }
