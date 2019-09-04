@@ -2,47 +2,59 @@ package com.bolsadeideas.springboot.di.app.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
-@Table(name="persona")
-public class Persona implements Serializable{
-	
+@Table(name = "PERSONA")
+public class Persona implements Serializable {
+
 	// Crear el atributo por defecto
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotEmpty
-	private String nombre;
-	
+
 	@NotEmpty
 	private String apellidoPaterno;
-	
+
 	@NotEmpty
 	private String apellidoMaterno;
-	
+
 	@NotEmpty
 	private String dni;
-	
+
 	@NotEmpty
 	private String cuentaGithub;
-	
+
 	@NotEmpty
-	private  String lugarResidencia;
-	
+	private String lugarResidencia;
+
 	@NotEmpty
 	private String telefono;
+
 	
-	@NotEmpty
-	private String password;
+	/*------------------*/
+	/* MAKING RELATION */
+	/*------------------*/
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn
+	//@Fetch(FetchMode.JOIN)
+	public Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -51,15 +63,7 @@ public class Persona implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
+	
 	public String getApellidoPaterno() {
 		return apellidoPaterno;
 	}
@@ -107,13 +111,4 @@ public class Persona implements Serializable{
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 }
