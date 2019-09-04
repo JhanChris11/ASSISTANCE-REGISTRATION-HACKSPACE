@@ -10,14 +10,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+
+
 @Entity
-@Table(name="tipousuarioss")
+@Table(name="tipousuarios")
 public class TipoUsuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -38,7 +39,7 @@ public class TipoUsuario implements Serializable{
 	
 	public TipoUsuario() {
 		
-		listaUsuarios=new ArrayList<Usuario>();
+	listaUsuarios=new ArrayList<Usuario>();
 		
 	}
 	
@@ -65,5 +66,10 @@ public class TipoUsuario implements Serializable{
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
+	/*Guarda una por una*/
+//	public void addUsuario (Usuario listaUsuario) {
+//		listaUsuarios.add(listaUsuario);
+//	}
+	
 
 }

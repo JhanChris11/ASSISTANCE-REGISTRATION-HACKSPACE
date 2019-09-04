@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Christian
+Build-Jdk: 11.0.3
+Implementation-Title: spring-boot-web-registroasistencias
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.bolsadeideas.springboot.app
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-web-registroasistencias
+Created-By: Maven Integration for Eclipse
+
