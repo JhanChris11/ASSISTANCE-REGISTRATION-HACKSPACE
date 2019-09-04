@@ -28,7 +28,7 @@ public class PersonaController {
 	/*----------------------*/
 	/*		SHOW INDEX  	*/
 	/*----------------------*/
-	
+
 	@GetMapping({"/","","/index"})
 	public String index(Map <String,Object> model) {
 		
@@ -40,7 +40,7 @@ public class PersonaController {
 		return "index";
 		
 	}
-	
+
 	@RequestMapping(value="/signIn")
 	public String signIn(Map <String,Object> model) {
 		
@@ -94,9 +94,11 @@ public class PersonaController {
 			SessionStatus status) {
 	
 		personaService.save(persona);
+		
 		status.setComplete();
 		
 		return "index";
 	
 	}
+		
 }

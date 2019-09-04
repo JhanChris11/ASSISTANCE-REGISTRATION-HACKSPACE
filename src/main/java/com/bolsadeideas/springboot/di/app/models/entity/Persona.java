@@ -14,17 +14,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+<<<<<<< HEAD
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "PERSONA")
+=======
+
+
+@Entity
+@Table(name = "personas")
+>>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 public class Persona implements Serializable {
 
 	// Crear el atributo por defecto
 	private static final long serialVersionUID = 1L;
 
 	@Id
+<<<<<<< HEAD
+=======
+	@Column(name="id")
+>>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
@@ -50,12 +61,21 @@ public class Persona implements Serializable {
 	/*------------------*/
 	/* MAKING RELATION */
 	/*------------------*/
+<<<<<<< HEAD
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn
 	//@Fetch(FetchMode.JOIN)
 	public Usuario usuario;
+=======
+>>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn
+	//@Fetch(FetchMode.JOIN)
+	private Usuario usuarios;
+
+	
 	public Long getId() {
 		return id;
 	}
@@ -111,4 +131,8 @@ public class Persona implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
