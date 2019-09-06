@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-<<<<<<< HEAD
-import javax.persistence.Column;
-=======
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,11 +17,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-<<<<<<< HEAD
-@Table(name="USUARIO")
-=======
 @Table(name="usuarios")
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -33,18 +25,6 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-<<<<<<< HEAD
-	
-	@NotEmpty
-	private String user;
-	
-	@NotEmpty
-	private String contra;
-	
-	/*---------------------------------*/
-	/*	MAKING RELATION TIPO USUARIO   */
-	/*---------------------------------*/
-=======
 	
 	
 	@NotEmpty
@@ -56,39 +36,31 @@ public class Usuario implements Serializable{
 	/*------------------*/
 	/*	MAKING RELATION */
 	/*------------------*/
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 	//carga peresoza
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn
 	private TipoUsuario tipousuario;
 
-<<<<<<< HEAD
-	/*--------------------------*/
-	/*	MAKING RELATION PERSONA	*/
-	/*--------------------------*/
+	/*------------------*/
+	/*	MAKING RELATION */
+	/*------------------*/
 	
-	/*@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	public Long getTipousuario() {
+		return tipousuario.getId();
+	}
+
+	public void setTipousuario(TipoUsuario tipousuario) {
+		this.tipousuario = tipousuario;
+	}
+
+	@OneToMany(mappedBy="usuarios",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	private List<Persona> listaPersonas;
 	
 	public Usuario() {
 		
 		listaPersonas=new ArrayList<Persona>();
-	
-	}*/
-=======
-	/*------------------*/
-	/*	MAKING RELATION */
-	/*------------------*/
-	
-	
-	//@OneToMany(mappedBy="usuarios",orphanRemoval=false, fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	@OneToMany(mappedBy="usuarios",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	private List<Persona> listaPersonas;
-	
-	public Usuario() {
-	listaPersonas=new ArrayList<Persona>();
+		
 	}
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 
 	public Long getId() {
 		return id;
@@ -99,40 +71,21 @@ public class Usuario implements Serializable{
 	}
 
 	public String getNombre_Usuario() {
-<<<<<<< HEAD
-		return user;
-	}
-
-	public void setNombre_Usuario(String username) {
-		this.user  = username;
-=======
 		return username;
 	}
 
 	public void setNombre_Usuario(String username) {
 		this.username  = username;
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 	}
 
 	public String getPassword() {
-		return contra;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		this.contra = password;
-	}
-	
-	/*public List<Persona> getListaPersonas() {
-		return listaPersonas;
+		this.password = password;
 	}
 
-<<<<<<< HEAD
-	public void setListaPersonas(List<Persona> listaPersonas) {
-		this.listaPersonas = listaPersonas;
-	}*/
-	
-}
-=======
 	public List<Persona> getListaPersonas() {
 		return listaPersonas;
 	}
@@ -146,4 +99,3 @@ public class Usuario implements Serializable{
 	}
 
 }
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def

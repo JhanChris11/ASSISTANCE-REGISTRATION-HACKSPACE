@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,20 +15,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-
-
 @Entity
-<<<<<<< HEAD
-@Table(name="TIPOUSUARIOS")
-=======
 @Table(name="tipousuarios")
->>>>>>> 0fc2e35791462e3300b8eaf69d2117eebbe35def
 public class TipoUsuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
@@ -45,7 +37,7 @@ public class TipoUsuario implements Serializable{
 	
 	public TipoUsuario() {
 		
-	listaUsuarios=new ArrayList<Usuario>();
+		listaUsuarios=new ArrayList<Usuario>();	
 		
 	}
 	
@@ -77,5 +69,4 @@ public class TipoUsuario implements Serializable{
 //		listaUsuarios.add(listaUsuario);
 //	}
 	
-
 }
