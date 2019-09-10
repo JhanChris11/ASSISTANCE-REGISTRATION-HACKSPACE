@@ -50,7 +50,7 @@ public class Persona implements Serializable {
 	/*------------------*/
 
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn
+	@JoinColumn(name="usuarios_id")
 	private Usuario usuarios;
 
 	

@@ -22,27 +22,27 @@
 		    <div class="card-body px-lg-5">
 
 		        <!-- Form -->
-		        <form class="text-center mt-3" style="color: #757575;" action="#!">
+		        <form th:object="${personaUser}" class="text-center mt-3" style="color: #757575;" th:action="@{/editar}" th:method="post">
 					
 					<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="" width="200px" height="200px" class="rounded-circle imagenLogo animated bounce infinite delay-5s">
 
 		            <!-- Name -->
 		            <div class="md-form mt-3 text-left" style="z-index: 4;">
 		            	<i class="fas fa-skating prefix grey-text"></i>
-		                <input type="text" id="materialSubscriptionFormPasswords" class="form-control" value="Jhan Christian">
+		                <input type="text" id="materialSubscriptionFormPasswords" class="form-control" th:field="*{Usuario}">
 		                <label for="materialSubscriptionFormPasswords">Nombres</label>
 		            </div>
 
 		            <!-- E-mai -->
 		            <div class="md-form text-left" style="z-index: 4;">
 		            	<i class="fas fa-male prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{ApellidoPaterno}">
 		                <label for="materialSubscriptionFormEmail">Apellido Paterno</label>
 		            </div>
 						
 					<div class="md-form text-left" style="z-index: 4;">
 						<i class="fas fa-female prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon Mariano">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{ApellidoMaterno}">
 		                <label for="materialSubscriptionFormEmail">Apellido Materno</label>
 		            </div>
 
@@ -50,26 +50,26 @@
 		            <!-- Dni -->
 		            <div class="md-form text-left" style="z-index: 4;">
 		            	<i class="fas fa-lock prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="70829426">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{dni}">
 		                <label for="materialSubscriptionFormEmail">Dni</label>
 		            </div>
 						
 
 					<div class="md-form text-left" style="z-index: 4;">
 						<i class="fab fa-github prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon Mariano">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{cuentaGithub}">
 		                <label for="materialSubscriptionFormEmail">Cuenta Github</label>
 		            </div>
 
 					<div class="md-form text-left" style="z-index: 4;">
 						<i class="fas fa-bed prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon Mariano">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{lugarResidencia}">
 		                <label for="materialSubscriptionFormEmail">Lugar de Residencia</label>
 		            </div>
 					
 					<div class="md-form text-left" style="z-index: 4;">
 						<i class="fas fa-mobile-alt prefix grey-text"></i>
-		                <input type="email" id="materialSubscriptionFormEmail" class="form-control" value="Calderon Mariano">
+		                <input type="text" id="materialSubscriptionFormEmail" class="form-control" th:field="*{telefono}">
 		                <label for="materialSubscriptionFormEmail">Nro Telefono</label>
 		            </div>
 

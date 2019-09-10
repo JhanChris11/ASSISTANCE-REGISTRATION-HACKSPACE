@@ -3,6 +3,8 @@ package com.bolsadeideas.springboot.di.app.UserDetail;
 import java.util.Collection;
 import java.util.Collections;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,7 +22,7 @@ public class UserPrincipal implements UserDetails{
 		this.user=user;	
 		
 	}
-	
+
 	//ASIGNANDO ROLES
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
@@ -41,6 +43,12 @@ public class UserPrincipal implements UserDetails{
 		
 	}
 	
+	public Long getId() {
+		
+		return user.getId();
+		
+	}
+	
 	//OBTENGO PASSWORD DEL USUARIO VALIDADO
 	public String getPassword() {
 		
@@ -52,6 +60,14 @@ public class UserPrincipal implements UserDetails{
 	public String getUsername() {
 		
 		return user.getNombre_Usuario();
+		
+	}
+	
+	public void GetDatesSession(HttpSession session) {
+		
+		session.setAttribute("id",getId());
+		session.setAttribute("nombre",getUsername());
+		session.setAttribute("password",getPassword());
 		
 	}
 

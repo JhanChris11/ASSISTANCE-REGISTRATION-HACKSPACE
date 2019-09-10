@@ -49,6 +49,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
 		/*ACA COLOCAMOS LOS DATOS OBTENIDOS DEL OBJETO USER PRINCIPAL QUE SE GUARDARON CUANDO SE VALIDO CORRECTAMENTE 
 		 * EL USUARIO*/
 		provider.setUserDetailsService(userDetailsService);
+	
 		//provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
 		
 		/*COLOCAMOS QUE LA PASSWORD SE ENCRIPTARA*/
