@@ -7,4 +7,3 @@ insert into personas(apellido_materno,apellido_paterno,cuenta_github,dni,lugar_r
 insert into tipos_registro_asistencias(tipo_asistencia,observaciones) values('Falto','El alumno no asistio la fecha indicada')
 insert into tipos_registro_asistencias(tipo_asistencia,observaciones) values('Asistio','El alumno asistio la fecha indicada')
 
-insert into rel_persona_tiporegasis(fecha,personas_id,tipos_registro_asistencias_id) values(sysdate(),1,1)
