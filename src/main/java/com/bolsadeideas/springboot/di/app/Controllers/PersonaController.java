@@ -32,7 +32,6 @@ public class PersonaController {
 	/*	   	   PERSON  		*/
 	/*----------------------*/
 	
-	
 	@RequestMapping(value="/form")
 	public String crear() {	
 		

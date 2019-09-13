@@ -80,6 +80,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
       		//DE VALIDACION DEL USUARIO AL DAR CLICK EN EL BUTTON DE LA PAGINA SUBMIT
       		.and()
 		    .formLogin().loginPage("/login").permitAll()
+		    .and()
+		    .formLogin().loginPage("/form").permitAll()
 		    .defaultSuccessUrl("/login", true)
 		    .and()
 		    .logout()
@@ -88,8 +90,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
             .logoutSuccessUrl("/login") 
 		    .permitAll();
-		
-		
+	
 	              
 	}
 	

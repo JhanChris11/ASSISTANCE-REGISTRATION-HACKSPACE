@@ -28,7 +28,7 @@ public class ViewPagesController {
 	/*----------------------*/
 	/*	   SHOW HOMEVIEW  	*/
 	/*----------------------*/
-	
+
 	@RequestMapping({"/HomeView"})
 	public String HomeView(Model model,HttpServletRequest request,HttpSession session) {
 		
