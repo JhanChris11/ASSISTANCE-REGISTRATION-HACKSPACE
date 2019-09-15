@@ -18,14 +18,19 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto;
 import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 import com.bolsadeideas.springboot.di.app.models.service.IPersonaService;
+import com.bolsadeideas.springboot.di.app.models.service.UsuarioServiceImpl;
 
 @Controller
 public class PersonaController {
 
 	@Autowired
 	private IPersonaService  personaService;
+	
+	@Autowired
+	private UsuarioServiceImpl usuarioPersonaService;
 	
 	/*----------------------*/
 	/*	   CREATING A NEW  	*/
@@ -40,13 +45,13 @@ public class PersonaController {
 	}
 	
 	@RequestMapping(value="/form",method=RequestMethod.POST)
-	public String guardar(SessionStatus status,Persona persona) {
+	public String guardar(Model model ,SessionStatus status,PersonaUsuarioDto dto ) {
 	
-		personaService.save(persona);
+
+		usuarioPersonaService.InsertUserPerson( dto.getPassword(),dto.getUsuario(), (long) 1);
+		usuarioPersonaService.InsertPersonUser(dto.getApellidoMaterno(), dto.getApellidoPaterno(), dto.getCuentaGithub(), dto.getDni(), dto.getLugarResidencia(),dto.getTelefono());
 		status.setComplete();
-		
-		System.out.println("Se guardo "+ persona.getApellidoMaterno());
-		
+	
 		return "redirect:login";
 	
 	}

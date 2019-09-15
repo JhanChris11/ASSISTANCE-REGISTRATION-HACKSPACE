@@ -3,9 +3,9 @@ package com.bolsadeideas.springboot.di.app.models.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
+
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import com.bolsadeideas.springboot.di.app.models.dao.IPersonaUsuarioDao;
 import com.bolsadeideas.springboot.di.app.models.dao.IUserDao;
@@ -43,11 +43,25 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return perUser;
 		
 	}
+	/* IMPLEMENTAMOS LOS METODOS CREADOS EN USUARIO SERVICE -3 */
 	
 	@Override
 	public void UpdatePersonaUsuario(String ApellidoPaterno,String ApellidoMaterno,String CuentaGithub,String dni,String lugarResidencia,String telefono,String usuario,Long idUsuario){
 		
 		personaUsuarioDao.updatePersonUser(ApellidoPaterno,ApellidoMaterno,CuentaGithub,dni,lugarResidencia,telefono,usuario,idUsuario);
+		
+	}
+
+	@Override
+	public void InsertUserPerson(String password, String username, Long tipousuario_id) {
+		personaUsuarioDao.insertUserPerson(password, username, tipousuario_id);
+		
+	}
+
+	@Override
+	public void InsertPersonUser(String ApellidoPaterno, String ApellidoMaterno, String CuentaGithub, String dni,
+			String lugarResidencia, String telefono) {
+		personaUsuarioDao.insertPersonUser(ApellidoPaterno, ApellidoMaterno, CuentaGithub, dni, lugarResidencia, telefono);
 		
 	}
 	

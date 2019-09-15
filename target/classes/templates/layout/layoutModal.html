@@ -38,38 +38,36 @@
 
 						<!-- PANEL BODY -->
 						<div class="modal-body mb-1">
-							
+
 							<form th:action="@{/login}" th:method="post">
-	
+
 								<div class="md-form form-sm mb-5">
 									<i class="fas fa-user prefix"></i> <input type="text"
-										id="modalLRInput10" 
-										name="username"
-										class="form-control form-control-sm validate"> <label data-error="incorrecto"
-										data-success="correcto" for="modalLRInput10">Ingresar
-										nombre de usuario</label>
+										id="modalLRInput10" name="username"
+										class="form-control form-control-sm validate"> <label
+										data-error="incorrecto" data-success="correcto"
+										for="modalLRInput10">Ingresar nombre de usuario</label>
 								</div>
 
 
 
 								<div class="md-form form-sm mb-4">
-									<i class="fas fa-lock prefix"></i> <input
-									name="password"
-										type="password" id="modalLRInput11" 
-										class="form-control form-control-sm validate">
-									<label data-error="incorrecto" data-success="correcto"
+									<i class="fas fa-lock prefix"></i> <input name="password"
+										type="password" id="modalLRInput11"
+										class="form-control form-control-sm validate"> <label
+										data-error="incorrecto" data-success="correcto"
 										for="modalLRInput11">Ingresar contraseña</label>
 								</div>
 
 								<div class="text-center mt-2">
-									
-									<i class="fas fa-sign-in ml-1"></i>
-									<input type="submit" value="Ingresar">
+
+									<i class="fas fa-sign-in ml-1"></i> <input type="submit"
+										value="Ingresar">
 
 								</div>
 
 							</form>
-							
+
 						</div>
 
 						<!-- PANEL FOOTER -->
@@ -95,7 +93,8 @@
 					<div class="tab-pane fade" id="panel8" role="tabpanel">
 
 						<!-- PANEL BODY -->
-						<form th:action="@{/form}" th:object="${persona}" method="post">
+						<form th:action="@{/form}" th:object="${personausuariodto}"
+							method="post">
 							<div class="modal-body">
 
 								<div class="row">
@@ -104,7 +103,7 @@
 
 										<div class="md-form form-sm mb-5-lg">
 											<i class="fas fa-user prefix"></i> <input required
-												type="text" id="modalLRInput12"
+												type="text" th:field="*{Usuario}" id="modalLRInput12"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
 												for="modalLRInput12">Nombre de usuario</label>
@@ -115,8 +114,7 @@
 									<div class="col-6">
 										<div class="md-form form-sm mb-5">
 											<i class="fas fa-user-ninja prefix"></i> <input required
-												type="text" 
-												th:field="*{apellidoPaterno}"
+												type="text" th:field="*{ApellidoPaterno}"
 												id="modalLRInput12"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
@@ -130,8 +128,7 @@
 
 										<div class="md-form form-sm mb-5">
 											<i class="fas fa-user-ninja prefix"></i><input required
-												type="text"
-												th:field="*{apellidoMaterno}"
+												type="text" th:field="*{ApellidoMaterno}"
 												id="modalLRInput12"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
@@ -142,8 +139,7 @@
 
 										<div class="md-form form-sm mb-5">
 											<i class="far fa-id-card prefix"></i> <input required
-												type="text" id="modalLRInput12"
-												th:field="*{dni}"
+												type="text" id="modalLRInput12" th:field="*{dni}"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
 												for="modalLRInput12">Numero de DNI</label>
@@ -154,8 +150,7 @@
 									<div class="col-6">
 										<div class="md-form form-sm mb-5">
 											<i class="fab fa-github prefix"></i> <input required
-												type="text" id="modalLRInput12"
-												th:field="*{cuentaGithub}"
+												type="text" id="modalLRInput12" th:field="*{cuentaGithub}"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
 												for="modalLRInput12">Cuenta de Github</label>
@@ -164,8 +159,7 @@
 									<div class="col-6">
 										<div class="md-form form-sm mb-5">
 											<i class="fas fa-map-marker-alt prefix"></i> <input required
-												type="text" 
-												th:field="*{lugarResidencia}"
+												type="text" th:field="*{lugarResidencia}"
 												id="modalLRInput12"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
@@ -179,8 +173,7 @@
 									<div class="col-6">
 										<div class="md-form form-sm mb-5">
 											<i class="fas fa-mobile-alt prefix"></i> <input required
-												type="tel" id="modalLRInput12"
-												th:field="*{telefono}"
+												type="tel" id="modalLRInput12" th:field="*{telefono}"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
 												for="modalLRInput12">Numero de telefono</label>
@@ -189,7 +182,7 @@
 									<div class="col-6">
 										<div class="md-form form-sm mb-5">
 											<i class="fas fa-lock prefix"></i> <input required
-												type="password" id="modalLRInput13"
+												type="password" id="modalLRInput13" th:field="*{password}"
 												class="form-control form-control-sm validate"> <label
 												data-error="incorrecto" data-success="correcto"
 												for="modalLRInput13">Ingresar su contraseña</label>

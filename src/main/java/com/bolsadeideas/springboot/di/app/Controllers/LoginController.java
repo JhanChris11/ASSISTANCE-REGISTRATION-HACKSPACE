@@ -5,7 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto;
 import com.bolsadeideas.springboot.di.app.models.entity.Persona;
-import com.bolsadeideas.springboot.di.app.models.service.UsuarioService;
 
 @Controller
 public class LoginController {
@@ -24,11 +23,10 @@ public class LoginController {
 	/*----------------------*/
 	
 	@RequestMapping({"/login"})
-	public String login(Map <String,Object> model,Model model2,HttpServletRequest request,HttpSession session) {
+	public String login(Map <String,Object> model,Model model2,HttpServletRequest request,HttpSession session ,PersonaUsuarioDto personaDto) {
 		
-		Persona persona=new Persona();
 		
-		model.put("persona",persona);
+		model.put("personausuariodto",personaDto);
 		
 		if(request.getRemoteUser()!=null) {
 			

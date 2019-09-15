@@ -16,6 +16,24 @@ public class PersonaUsuarioDto {
 	
 	public String telefono;
 	
+	public String password;
+	
+	public PersonaUsuarioDto(){
+		
+	}
+	public PersonaUsuarioDto(String Usuario,String ApellidoPaterno,String ApellidoMaterno,String dni,String cuentaGithub,String lugarResidencia,String telefono , String password){
+		
+		this.Usuario=Usuario;
+		this.ApellidoPaterno=ApellidoPaterno;
+		this.ApellidoMaterno=ApellidoMaterno;
+		this.dni=dni;
+		this.cuentaGithub=cuentaGithub;
+		this.lugarResidencia=lugarResidencia;
+		this.telefono=telefono;
+		this.password=password;
+		
+	}
+
 	public PersonaUsuarioDto(String Usuario,String ApellidoPaterno,String ApellidoMaterno,String dni,String cuentaGithub,String lugarResidencia,String telefono){
 		
 		this.Usuario=Usuario;
@@ -83,5 +101,13 @@ public class PersonaUsuarioDto {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	
 }
