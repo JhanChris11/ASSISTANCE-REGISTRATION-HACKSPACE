@@ -11,5 +11,7 @@ import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 
 public interface IPersonaDao extends JpaRepository<Persona, Long>{
 
+	@Query("SELECT new com.bolsadeideas.springboot.di.app.models.entity.Persona(u.id) FROM Persona p INNER JOIN p.usuarios u WHERE u.id= ?1")
+	Persona findAllActiveUsers(Long idUser);
 	
 }

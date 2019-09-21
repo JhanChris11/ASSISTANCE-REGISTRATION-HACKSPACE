@@ -22,7 +22,7 @@
 		    <div class="card-body px-lg-5">
 
 		        <!-- Form -->
-		        <form th:object="${personaUser}" class="text-center mt-3" style="color: #757575;" th:action="@{/editar}" th:method="post">
+		        <form th:object="${personaUser}" class="text-center mt-3 formEdit" style="color: #757575;" th:action="@{/editar}" th:method="post">
 					
 					<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="" width="200px" height="200px" class="rounded-circle imagenLogo animated bounce infinite delay-5s">
 
@@ -74,7 +74,7 @@
 		            </div>
 
 		            <!-- Sign in button -->
-		            <button class="btn btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" style="border: 3px solid #00a79d;z-index: 4;">Editar Perfil</button>
+		            <button class="btn btn-rounded btn-block z-depth-0 my-4 waves-effect btnEdit" type="submit" style="border: 3px solid #00a79d;z-index: 4;">Editar Perfil</button>
 
 		        </form>
 		        <!-- Form -->

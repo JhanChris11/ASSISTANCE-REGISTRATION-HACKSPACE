@@ -22,11 +22,9 @@
 		    <div class="card-body px-lg-5">
 
 		        <!-- Form -->
-		        <form class="text-center mt-3" style="color: #757575;" th:action="@{/registrar}">
+		        <form class="text-center mt-3 formAsistence" action="#" style="color: #757575;" th:method="get">
 					
 					<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="" width="200px" height="200px" class="rounded-circle imagenLogo animated bounce infinite delay-5s">
-
-					
 
 		            <!-- Name -->
 		            <div class="md-form mt-3 text-left">
@@ -50,8 +48,10 @@
 		            </div>
 
 		            <!-- Sign in button -->
-		            <button class="btn btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" style="border: 3px solid #00a79d;z-index: 4;">Registrar Asistencia</button>
-
+					<button class="btn btn-rounded btn-block z-depth-0 my-4 waves-effect btnRegister" id="botonRegister" type="submit" style="border: 3px solid #00a79d;z-index: 4;">Registrar Asistencia</button>
+					
+					<input type="hidden" th:value="${valor}" id="botonHidden">
+					
 		        </form>
 		        <!-- Form -->
 

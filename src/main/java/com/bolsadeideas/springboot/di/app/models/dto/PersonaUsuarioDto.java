@@ -1,5 +1,7 @@
 package com.bolsadeideas.springboot.di.app.models.dto;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 public class PersonaUsuarioDto {
 
 	public String Usuario;
@@ -108,6 +110,13 @@ public class PersonaUsuarioDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	
+	public String getPasswordEncrypted() {
+		
+		BCryptPasswordEncoder encryptePassword=new BCryptPasswordEncoder();
+		
+		return encryptePassword.encode(getPassword());
+		
+	}
+
 }

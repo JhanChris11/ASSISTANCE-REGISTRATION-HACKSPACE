@@ -62,6 +62,17 @@ public class Persona implements Serializable {
 	@JoinColumn(name="usuarios_id")
 	private Usuario usuarios;
 	
+	public Persona() {
+		
+		
+	}
+	
+	public Persona(Long id) {
+		
+		this.id=id;
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

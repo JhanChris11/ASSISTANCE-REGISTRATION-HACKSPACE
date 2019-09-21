@@ -81,7 +81,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
       		.and()
 		    .formLogin().loginPage("/login").permitAll()
 		    .and()
-		    .formLogin().loginPage("/form").permitAll()
+		    .formLogin().loginPage("/form")
 		    .defaultSuccessUrl("/login", true)
 		    .and()
 		    .logout()
@@ -91,7 +91,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
             .logoutSuccessUrl("/login") 
 		    .permitAll();
 	
-	              
 	}
 	
 }

@@ -22,7 +22,7 @@ public class LoginController {
 	/*		 OR LOGIN  		*/
 	/*----------------------*/
 	
-	@RequestMapping({"/login"})
+	@RequestMapping({"/login","/"})
 	public String login(Map <String,Object> model,Model model2,HttpServletRequest request,HttpSession session ,PersonaUsuarioDto personaDto) {
 		
 		

@@ -48,7 +48,7 @@ public class PersonaController {
 	public String guardar(Model model ,SessionStatus status,PersonaUsuarioDto dto ) {
 	
 
-		usuarioPersonaService.InsertUserPerson( dto.getPassword(),dto.getUsuario(), (long) 1);
+		usuarioPersonaService.InsertUserPerson( dto.getPasswordEncrypted(),dto.getUsuario(), (long) 1);
 		usuarioPersonaService.InsertPersonUser(dto.getApellidoMaterno(), dto.getApellidoPaterno(), dto.getCuentaGithub(), dto.getDni(), dto.getLugarResidencia(),dto.getTelefono());
 		status.setComplete();
 	

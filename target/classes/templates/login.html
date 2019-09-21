@@ -3,23 +3,63 @@
 
 <head th:replace="layout/layout :: head"></head>
 
-<body>
+<body style="padding-top:100px;">
 
 	<!--MODAL FORM-->
 	<div th:replace="layout/layoutModal :: modal-form"></div>
-		
-	<!--MODAL BOTON-->
-	<div class="col" id="enlace" style="background:black;">
-
-		<div class="text-center">
-			<a href="" class="btn btn-default btn-rounded my-3"
-				data-toggle="modal" data-target="#modalLRForm">Sistema de
-				Registro de Asistencias</a>
-		</div>
-	</div>
 	
-	<!-- ADDING PARTICLES CONTAINER -->
-	<div th:replace="layout/layout :: particulas"></div>
+	<!--Navbar -->
+	<nav class="mb-1 navbar navbar-expand-lg fixed-top" style="background:white;height:100px;display:flex;justify-content:space-between;">
+	
+	  <img width="150px" height="60px" th:src="@{/img/hackspace-mini.png}">
+	  
+	  <div>
+	  
+	    <ul class="navbar-nav ml-auto nav-flex-icons">
+	    
+	      <li class="nav-item">
+	        <a class="nav-link waves-effect waves-light">
+	          <i class="fab fa-twitter"></i>
+	        </a>
+	      </li>
+	      
+	      <li class="nav-item">
+	        <a class="nav-link waves-effect waves-light">
+	          <i class="fab fa-google-plus-g"></i>
+	        </a>
+	      </li>
+
+	    </ul>
+	    
+	  </div>
+	  
+	</nav>
+	<!--/.Navbar -->
+	
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="height:100%;">
+	  
+	  <div class="carousel-inner" style="height:100%;">
+	    <div class="carousel-item active" style="height:100%;">
+	      <img alt="" th:src="@{/img/fondo1.jpg}" height="100%" width="100%">
+	    </div>
+	    <div class="carousel-item" style="height:100%;">
+	      <img alt="" th:src="@{/img/fondo2.png}" height="100%" width="100%">
+	    </div>
+	    <div class="carousel-item" style="height:100%;">
+	      <img alt="" th:src="@{/img/fondo3.png}" height="100%" width="100%">
+	    </div>
+	  </div>
+	  
+	  <!--MODAL BOTON-->
+		<div class="col" id="enlace" style="position:absolute;">
+	
+			<div class="text-center">
+				<a href="" class="btn btn-default btn-rounded my-3"
+					data-toggle="modal" data-target="#modalLRForm">Login Asistencia</a>
+			</div>
+		</div>
+	    
+	</div>
 	
 	<!-- ADDING SCRIPTS TO THIS FILES -->
 	<footer th:replace="layout/layout :: footer"></footer>

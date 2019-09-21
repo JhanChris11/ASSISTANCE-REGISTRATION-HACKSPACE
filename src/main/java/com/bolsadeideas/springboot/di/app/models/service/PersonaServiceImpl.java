@@ -26,5 +26,16 @@ public class PersonaServiceImpl implements IPersonaService {
 		
 	}
 
+	@Override
+	public Long getIdPerson(Long id) {
+		
+		Persona persona=new Persona();
+		
+		persona=personaDao.findAllActiveUsers(id);
+		
+		return persona.getId();
+		
+	}
+
 }
 	
