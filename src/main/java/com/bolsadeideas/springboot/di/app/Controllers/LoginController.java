@@ -52,5 +52,25 @@ public class LoginController {
 		return "login";
 		
 	}
+	@RequestMapping({"/administrador"})
+	public String administrador(Model model) {
+		
+		return "login-admin";
+	}
+	@RequestMapping({"/principal"})
+	public String principal(Model model) {
+		return "principal-admin";
+	}
+	
+	@RequestMapping({"/listado"})
+	public String listado(Model model) {
+		return "listado";
+	}
+	
+	@RequestMapping({"/calendario"})
+	public String calendario(Model model) {
+		return "calendario";
+	}
+	
 	
 }
