@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8" />
+
+</head>
+
+<!--MODAL FORM-->
+<div th:fragment="modal-form" class="modal fade" id="modalLRForm"
+	tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	aria-hidden="true">
+
+	<div class="modal-dialog cascading-modal" role="document">
+
+		<div class="modal-content">
+
+			<div class="modal-c-tabs">
+
+				<!-- TABS FOR THE MODAL: SIGN IN AND SIGN UP -->
+				<ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3"
+					role="tablist">
+					<li class="nav-item"><a class="nav-link active"
+						data-toggle="tab" href="#panel7" role="tab"><i
+							class="fas fa-user mr-1"></i> Iniciar Sesion</a></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="tab"
+						href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+							Registrar</a></li>
+				</ul>
+
+				<!-- PANELS SIGN IN AND SING UP -->
+				<div class="tab-content">
+
+					<!-- PANEL SIGN IN -->
+					<div class="tab-pane fade in show active" id="panel7"
+						role="tabpanel">
+
+						<!-- PANEL BODY -->
+						<div class="modal-body mb-1">
+
+							<form th:action="@{/login}" th:method="post">
+
+								<div class="md-form form-sm mb-5">
+									<i class="fas fa-user prefix"></i> <input type="text"
+										id="modalLRInput10" name="username"
+										class="form-control form-control-sm validate"> <label
+										data-error="incorrecto" data-success="correcto"
+										for="modalLRInput10">Ingresar nombre de usuario</label>
+								</div>
+
+
+
+								<div class="md-form form-sm mb-4">
+									<i class="fas fa-lock prefix"></i> <input name="password"
+										type="password" id="modalLRInput11"
+										class="form-control form-control-sm validate"> <label
+										data-error="incorrecto" data-success="correcto"
+										for="modalLRInput11">Ingresar contraseña</label>
+								</div>
+
+								<div class="text-center form-sm mt-2">
+									<button class="btn btn-info">
+										Login <i class="fas fa-sign-in ml-1"></i>
+									</button>
+								</div>
+
+							</form>
+
+						</div>
+
+						<!-- PANEL FOOTER -->
+						<div class="modal-footer">
+
+							<div class="options text-center text-md-right mt-1">
+
+								<p>
+									<a href="#" class="blue-text">Me olvide mi contraseña ?</a>
+								</p>
+							</div>
+
+							<button type="button"
+								class="btn btn-outline-info waves-effect ml-auto"
+								data-dismiss="modal">Cerrar</button>
+
+						</div>
+
+					</div>
+					<!--/.PANEL SIGN IN-->
+
+					<!-- PANEL SIGN UP-->
+					<div class="tab-pane fade" id="panel8" role="tabpanel">
+
+						<!-- PANEL BODY -->
+						<form th:action="@{/form}" th:object="${personausuariodto}"
+							th:method="get">
+							<div class="modal-body">
+
+								<div class="row">
+
+									<div class="col-6">
+
+										<div class="md-form form-sm mb-5-lg">
+											<i class="fas fa-user prefix"></i> <input required
+												type="text" th:field="*{Usuario}" id="modalLRInput12"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Nombre de usuario</label>
+										</div>
+
+									</div>
+
+									<div class="col-6">
+										<div class="md-form form-sm mb-5">
+											<i class="fas fa-user-ninja prefix"></i> <input required
+												type="text" th:field="*{ApellidoPaterno}"
+												id="modalLRInput12"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Apellido paterno</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+
+
+										<div class="md-form form-sm mb-5">
+											<i class="fas fa-user-ninja prefix"></i><input required
+												type="text" th:field="*{ApellidoMaterno}"
+												id="modalLRInput12"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Apellido materno</label>
+										</div>
+									</div>
+									<div class="col-6">
+
+										<div class="md-form form-sm mb-5">
+											<i class="far fa-id-card prefix"></i> <input required
+												type="text" id="modalLRInput12" th:field="*{dni}"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Numero de DNI</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-6">
+										<div class="md-form form-sm mb-5">
+											<i class="fab fa-github prefix"></i> <input required
+												type="text" id="modalLRInput12" th:field="*{cuentaGithub}"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Cuenta de Github</label>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="md-form form-sm mb-5">
+											<i class="fas fa-map-marker-alt prefix"></i> <input required
+												type="text" th:field="*{lugarResidencia}"
+												id="modalLRInput12"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Lugar de residencia</label>
+										</div>
+									</div>
+
+								</div>
+								<div class="row">
+
+									<div class="col-6">
+										<div class="md-form form-sm mb-5">
+											<i class="fas fa-mobile-alt prefix"></i> <input required
+												type="tel" id="modalLRInput12" th:field="*{telefono}"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput12">Numero de telefono</label>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="md-form form-sm mb-5">
+											<i class="fas fa-lock prefix"></i> <input required
+												type="password" id="modalLRInput13" th:field="*{password}"
+												class="form-control form-control-sm validate"> <label
+												data-error="incorrecto" data-success="correcto"
+												for="modalLRInput13">Ingresar su contraseña</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="text-center form-sm mt-2">
+									<button class="btn btn-info">
+										Ingresar <i class="fas fa-sign-in ml-1"></i>
+									</button>
+								</div>
+
+							</div>
+						</form>
+
+						<!-- PANEL FOOTER -->
+						<div class="modal-footer">
+
+							<div class="options text-right">
+								<p class="pt-1">
+									Ya tienes una cuenta? <a href="#panel7" data-toggle="tab"
+										role="tab" class="blue-text">Iniciar Session</a>
+								</p>
+							</div>
+
+							<button type="button"
+								class="btn btn-outline-info waves-effect ml-auto"
+								data-dismiss="modal">Cerrar</button>
+
+						</div>
+
+					</div>
+					<!--/PANEL SIGN UP-->
+				</div>
+				<!-- /PANELS -->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--/MODAL-->
+
+</html>

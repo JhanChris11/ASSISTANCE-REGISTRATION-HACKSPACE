@@ -37,22 +37,25 @@ public class PersonaController {
 	/*	   	   PERSON  		*/
 	/*----------------------*/
 	
-	@RequestMapping(value="/form")
-	public String crear() {	
-		
-		return "form";
-		
-	}
-	
-	@RequestMapping(value="/form",method=RequestMethod.POST)
+	@RequestMapping(value="/form",method=RequestMethod.GET)
 	public String guardar(Model model ,SessionStatus status,PersonaUsuarioDto dto ) {
 	
-
-		usuarioPersonaService.InsertUserPerson( dto.getPasswordEncrypted(),dto.getUsuario(), (long) 1);
-		usuarioPersonaService.InsertPersonUser(dto.getApellidoMaterno(), dto.getApellidoPaterno(), dto.getCuentaGithub(), dto.getDni(), dto.getLugarResidencia(),dto.getTelefono());
-		status.setComplete();
-	
-		return "redirect:login";
+		System.out.println("Registrando2");
+		
+		try {
+			
+			usuarioPersonaService.InsertUserPerson( dto.getPasswordEncrypted(),dto.getUsuario(), (long) 1);
+			usuarioPersonaService.InsertPersonUser(dto.getApellidoMaterno(), dto.getApellidoPaterno(), dto.getCuentaGithub(), dto.getDni(), dto.getLugarResidencia(),dto.getTelefono());
+			status.setComplete();
+			
+			
+		}catch(Exception e){
+			
+			System.out.println("Datos nulos...");
+			
+		}
+		
+		return "redirect:user/login";
 	
 	}
 

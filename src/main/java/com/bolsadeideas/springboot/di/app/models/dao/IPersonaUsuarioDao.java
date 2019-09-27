@@ -1,5 +1,7 @@
 package com.bolsadeideas.springboot.di.app.models.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,7 +12,13 @@ import com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto;
 import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 
 public interface IPersonaUsuarioDao extends JpaRepository<Persona,Long>{
-	/* CONSULTAS PARA LUEGO LLAMARLO USUARIOSERVICE -1 */
+	
+	/*-----------------------------*/
+	/*      CONSULTAS JPQL         */
+	/*-----------------------------*/
+	
+	@Query("SELECT new com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto(u.id,u.username,u.password,p.id,p.apellidoPaterno,p.apellidoMaterno,p.dni,p.cuentaGithub,p.lugarResidencia,p.telefono) FROM Persona p INNER JOIN p.usuarios u")
+	List<PersonaUsuarioDto> findAllPersonUser();
 
 	@Query("SELECT new com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto(u.username,p.apellidoPaterno,p.apellidoMaterno,p.dni,p.cuentaGithub,p.lugarResidencia,p.telefono) FROM Persona p INNER JOIN p.usuarios u WHERE u.id= ?1")
 	PersonaUsuarioDto findUserByStatus(Long status);

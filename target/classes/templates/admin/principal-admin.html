@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout/layoutDashboard :: head-vista-admin "></head>
+
+<body data-col="2-columns" class=" 2-columns  layout-dark">
+
+ 	<div class="wrapper">
+ 	
+   		<div th:replace="admin/layout/layoutSideBarAdmin :: body-admin"></div>
+
+   		<div th:replace="admin/layout/layoutNavAdminHome :: navbar-header"></div>
+
+    	<div th:replace="admin/layout/layoutMainDashboard :: main-principal"></div>
+    	 
+ 	</div>
+ 
+
+   	<div th:replace="admin/layout/layoutDashboard :: customizer-color"></div>
+   
+   	<footer th:replace="admin/layout/layoutDashboard :: footer-vista-admin"></footer>
+  
+</body>
+</html>

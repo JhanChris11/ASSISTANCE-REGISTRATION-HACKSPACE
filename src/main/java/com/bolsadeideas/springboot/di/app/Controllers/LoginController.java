@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto;
-import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 
 @Controller
 public class LoginController {
@@ -28,6 +27,10 @@ public class LoginController {
 		
 		model.put("personausuariodto",personaDto);
 		
+		System.out.println("Redireccionando del login User");
+		
+		System.out.println(request.getRemoteUser()+ "de User");
+		
 		if(request.getRemoteUser()!=null) {
 			
 			System.out.println("Redireccionando");
@@ -36,7 +39,7 @@ public class LoginController {
 			
 		}
 		
-		return "login";
+		return "user/login";
 		
 	}
 	
@@ -49,7 +52,7 @@ public class LoginController {
 		
 		status.setComplete();
 		
-		return "login";
+		return "user/login";
 		
 	}
 	

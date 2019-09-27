@@ -90,7 +90,7 @@ public class ViewPagesController {
 		model.addAttribute("dni",persUser.getDni());
 		model.addAttribute("nombres",persUser.getUsuario()+" "+persUser.getApellidoPaterno());
 		
-		return "Home";
+		return "user/Home";
 		
 	}
 	
@@ -112,7 +112,7 @@ public class ViewPagesController {
 		modelObject.put("personaUser",persUser);
 		model.addAttribute("nombres",persUser.getUsuario()+" "+persUser.getApellidoPaterno());
 		
-		return "Home2";
+		return "user/Home2";
 		
 	}
 	

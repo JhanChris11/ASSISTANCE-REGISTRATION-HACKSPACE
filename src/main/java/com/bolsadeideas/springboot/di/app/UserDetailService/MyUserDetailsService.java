@@ -29,7 +29,6 @@ import com.bolsadeideas.springboot.di.app.models.entity.Usuario;
 //Esta interfaz describe un objeto que realiza un acceso a datos con un único método loadUserByUsername 
 
 @Service
-@SessionAttributes("usuario")
 public class MyUserDetailsService implements UserDetailsService{
 	
 	private String nombre;
@@ -59,6 +58,8 @@ public class MyUserDetailsService implements UserDetailsService{
 		
 		UserPrincipal usuario= new UserPrincipal(user);
 		usuario.GetDatesSession(session);
+		
+		System.out.println("Login correcto,Admin!!! "+usuario.getAuthorities());
 		
 		return usuario;
 		

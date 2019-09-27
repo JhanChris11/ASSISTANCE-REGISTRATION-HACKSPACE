@@ -3,6 +3,10 @@ package com.bolsadeideas.springboot.di.app.models.dto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PersonaUsuarioDto {
+	
+	public Long idUsuario;
+	
+	public Long idPersona;
 
 	public String Usuario;
 	
@@ -23,6 +27,22 @@ public class PersonaUsuarioDto {
 	public PersonaUsuarioDto(){
 		
 	}
+	
+	public PersonaUsuarioDto(Long idUsuario,String Usuario,String password,Long idPersona,String ApellidoPaterno,String ApellidoMaterno,String dni,String cuentaGithub,String lugarResidencia,String telefono){
+		
+		this.idUsuario=idUsuario;
+		this.Usuario=Usuario;
+		this.password=password;
+		this.idPersona=idPersona;
+		this.ApellidoPaterno=ApellidoPaterno;
+		this.ApellidoMaterno=ApellidoMaterno;
+		this.dni=dni;
+		this.cuentaGithub=cuentaGithub;
+		this.lugarResidencia=lugarResidencia;
+		this.telefono=telefono;
+		
+	}
+	
 	public PersonaUsuarioDto(String Usuario,String ApellidoPaterno,String ApellidoMaterno,String dni,String cuentaGithub,String lugarResidencia,String telefono , String password){
 		
 		this.Usuario=Usuario;

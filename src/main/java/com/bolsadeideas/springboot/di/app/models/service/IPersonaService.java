@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-
+import com.bolsadeideas.springboot.di.app.models.dto.PersonaUsuarioDto;
 import com.bolsadeideas.springboot.di.app.models.entity.Persona;
 
 public interface IPersonaService {
@@ -15,6 +15,9 @@ public interface IPersonaService {
 	public void save(Persona persona);
 	
 	public Long getIdPerson(Long id);
+	
+	@Transactional(readOnly=true)
+	public List<PersonaUsuarioDto> findAllPersonUser();
 	
 }
 
