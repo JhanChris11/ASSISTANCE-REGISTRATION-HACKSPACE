@@ -19,7 +19,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+@Order(2)
 public class AdminConfig extends WebSecurityConfigurerAdapter{
 		
 		//METODO DE CONFIGURACION PARA QUE CUALQUIER SOLICITUD A LA APLICACION SEA AUTENTICADA
